@@ -1,0 +1,7 @@
+{
+  "name": "detectaBB",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
