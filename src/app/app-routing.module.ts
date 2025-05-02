@@ -12,7 +12,11 @@ const routes: Routes = [
   {
     path: 'home-page',
     loadChildren: () => import('./pages/home-page/home-page.module').then( m => m.HomePagePageModule)
+  },  {
+    path: 'upload',
+    loadChildren: () => import('./pages/upload/upload.module').then( m => m.UploadPageModule)
   },
+
 ];
 
 @NgModule({
