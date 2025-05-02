@@ -1,0 +1,45 @@
+/* filepath: c:\Users\meade\Projetos\detectaBB\src\app\pages\home-page\home-page.page.scss */
+.home-page {
+  background: linear-gradient(to bottom, #ffffff 25%, #FCFC30 75%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+
+  .logo-container {
+    margin-top: 150px;
+  }
+
+  .logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .welcome-message {
+    margin-top: 200px;
+
+    h1 {
+      font-size: 1.5rem;
+      color: #1e88e5;
+      font-weight: bold;
+    }
+  }
+
+  .button-container {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    width: 100%; /* Garante que o container ocupe toda a largura */
+
+    ion-button {
+      width: 80%; /* Define a largura do botão */
+      max-width: 300px; /* Define um limite máximo para a largura */
+      --background: #1e88e5;
+      --background-hover: #1565c0;
+      --border-radius: 20px;
+      --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
