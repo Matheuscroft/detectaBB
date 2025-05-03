@@ -1,0 +1,19 @@
+<ion-content class="ion-padding resultado-page">
+  <div class="resultado-container" [ngClass]="resultado?.resultado_modelo === 'Verdadeiro' ? 'verdadeiro' : 'falso'">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>
+          {{ resultado?.resultado_modelo === 'Verdadeiro' ? '✅ Boleto Válido' : '❌ Boleto Falso' }}
+        </ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p class="mensagem">
+          {{ resultado?.resultado_modelo === 'Verdadeiro' ? 'Não se preocupe, este boleto é verdadeiro!' : 'Atenção! Este boleto pode ser falso. Evite realizar o pagamento.' }}
+        </p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="full" routerLink="/">Voltar</ion-button>
+  </div>
+</ion-content>

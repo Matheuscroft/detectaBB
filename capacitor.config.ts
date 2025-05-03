@@ -3,7 +3,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'detectaBB',
-  webDir: 'www'
+  webDir: 'dist/detectaBB',
 };
 
 export default config;
