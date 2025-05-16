@@ -1,0 +1,59 @@
+.landing-page {
+  background:#ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+
+  .logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+  }
+
+  .logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .welcome-message {
+    margin-top: 200px;
+
+    h2 {
+      font-size: 3rem;
+      color: #2d4fff;
+      font-weight: bold;
+    }
+
+    .destaque {
+      color: #2d4fff;
+      font-weight: 700;
+      background-image: linear-gradient(yellow, yellow);
+      background-size: 100% 5px;
+      background-repeat: no-repeat;
+      background-position: 0 70%;
+    }
+  }
+
+  .button-container {
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 30px;
+
+    ion-button {
+      width: 30%;
+      max-width: 300px;
+      --background: #1e88e5;
+      --background-hover: #1565c0;
+      --border-radius: 20px;
+      --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      font-size: 18px;
+      text-transform: none;
+    }
+  }
+}

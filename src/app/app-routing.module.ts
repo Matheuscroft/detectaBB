@@ -41,6 +41,11 @@ const routes: Routes = [
         (m) => m.ForgotPasswordPageModule
       ),
   },
+  {
+    path: 'landing-page',
+    loadChildren: () => import('./pages/landing-page/landing-page.module').then( m => m.LandingPagePageModule)
+  },
+
 ];
 
 @NgModule({
