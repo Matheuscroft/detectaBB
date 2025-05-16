@@ -1,13 +1,29 @@
-<ion-content [fullscreen]="true" class="home-page">
-  <div class="logo-container">
-    <img src="assets/icon/image.png" alt="Logo" class="logo" />
+<ion-header translucent="true">
+  <ion-toolbar color="transparent">
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="profile-button">
+        <ion-avatar class="profile-avatar">
+          <img src="assets/icon/perfil.png" alt="Foto de perfil" />
+        </ion-avatar>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-page" fullscreen>
+  <div class="top-wave"></div>
+
+  <div class="greeting">
+    <h2>Olá, Nina!</h2>
+    <p>Que bom você por aqui!</p>
   </div>
-  <div class="welcome-message">
-    <h1>Que bom você por aqui!</h1>
-  </div>
-  <div class="button-container">
-    <ion-button color="primary" shape="round" (click)="irParaUpload()">
-      VALIDAR BOLETO
+
+  <div class="validate-section">
+    <p class="validate-text">Vamos validar seu boleto hoje?</p>
+    <ion-button expand="block" class="validate-button">
+      CLIQUE AQUI!
     </ion-button>
   </div>
+
+  <img class="bottom-logo" src="assets/icon/logo.png" alt="Logo BB" />
 </ion-content>
