@@ -1,55 +1,93 @@
 .resultado-page {
-    --background: linear-gradient(to bottom, #3d4df2 0%, #f2f13d 100%);
+  // --background: linear-gradient(to bottom, #3d4df2 0%, #f2f13d 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  // position: relative;
+  // background-color: #fcfc30;
+  // background-color: #2d49ff;
+
+  .resultado-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-flow: column;
+    justify-content: space-between;
     height: 100%;
-  
-    .resultado-container {
-      width: 100%;
-      max-width: 400px;
-      padding: 20px;
-  
-      ion-card {
-        border-radius: 20px;
-        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        color: #fff;
-  
-        ion-card-header {
-          background-color: transparent;
-  
-          ion-card-title {
-            font-size: 24px;
-            font-weight: bold;
-          }
-        }
-  
-        ion-card-content {
-          padding-top: 0;
-  
-          .mensagem {
-            font-size: 16px;
-            margin-top: 10px;
-          }
+    width: 100%;
+    max-width: 400px;
+    padding: 20px 10px;
+    position: relative;
+
+    ion-card {
+      padding: 20px 0;
+      margin-top: 50px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      color: #000;
+      min-height: 250px;
+      align-items: center;
+
+      ion-card-header {
+        background-color: transparent;
+
+        ion-card-title {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 20px;
         }
       }
-  
-      ion-button {
-        margin-top: 20px;
-        --border-radius: 12px;
-        --background: #1e88e5;
-        color: white;
-        font-weight: bold;
+
+      ion-card-content {
+        padding-top: 0;
+
+        .mensagem {
+          font-size: 16px;
+          margin-top: 10px;
+        }
       }
     }
-  
-    .verdadeiro ion-card {
-      background-color: #4caf50;
-    }
-  
-    .falso ion-card {
-      background-color: #e53935;
+
+    ion-button {
+      --border-radius: 12px;
+      --background: #2d49ff;
+      --padding-top: 15px;
+      --padding-bottom: 15px;
+      --color: white;
+      font-weight: bold;
     }
   }
-  
+
+  .verdadeiro ion-card {
+    border: 3px solid #4caf50;
+
+    ion-card-title {
+      color: #4caf50;
+    }
+  }
+
+  .falso ion-card {
+    border: 3px solid #e53935;
+
+    ion-card-title {
+      color: #e53935;
+    }
+  }
+
+  .bg--yellow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 180px;
+    border-radius: 0 0 24px 24px;
+    padding: 5px;
+
+    background-color: #fcfc30;
+
+    // img {
+    //   width: 100px;
+    // }
+  }
+}
