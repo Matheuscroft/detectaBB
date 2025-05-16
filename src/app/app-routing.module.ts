@@ -42,7 +42,11 @@ const routes: Routes = [
       import('./pages/forgot-password/forgot-password.module').then(
         (m) => m.ForgotPasswordPageModule
       ),
+  },  {
+    path: 'landing-page',
+    loadChildren: () => import('./pages/landing-page/landing-page.module').then( m => m.LandingPagePageModule)
   },
+
 ];
 
 @NgModule({
