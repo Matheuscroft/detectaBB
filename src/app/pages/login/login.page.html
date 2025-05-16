@@ -50,16 +50,20 @@
 
     <ion-item>
       <ion-label position="stacked" class="input-label-azul">E-mail</ion-label>
-      <ion-input placeholder="Digite seu e-mail" type="email"></ion-input>
+      <ion-input placeholder="Digite seu e-mail" type="email" [(ngModel)]="email" name="email"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked" class="input-label-azul">Senha</ion-label>
-      <ion-input placeholder="Digite sua senha" type="password"></ion-input>
+      <ion-input placeholder="Digite sua senha" type="password" [(ngModel)]="senha" name="senha"></ion-input>
       <p class="input-label-azul">Esqueceu sua senha?
         <a href="forgot-password" class="und">Recuperar conta</a>
       </p>
     </ion-item>
+
+    <ion-button class="login-button" (click)="fazerLogin()">
+      ENTRAR
+    </ion-button>
     
     <div></div>
     <div></div>

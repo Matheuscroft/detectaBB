@@ -25,4 +25,12 @@ export class ApiService {
     console.error('Erro da API:', error);
     return throwError(() => error);
   }
+
+  login(email: string, senha: string): Observable<any> {
+  const body = { email, senha };
+  return this.http.post(`${this.baseUrl}/auth/login`, body).pipe(
+    catchError(this.handleError)
+  );
+}
+
 }

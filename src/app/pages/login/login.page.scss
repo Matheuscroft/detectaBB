@@ -111,3 +111,13 @@ ion-input {
   text-decoration: underline !important;
 
 }
+
+.login-button {
+      --background: #465EFF;
+      --color: white;
+      border-radius: 12px;
+      font-weight: bold;
+      height: 45px;
+      font-size: 14px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
