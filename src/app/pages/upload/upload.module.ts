@@ -7,12 +7,7 @@ import { UploadPageRoutingModule } from './upload-routing.module';
 import { UploadPage } from './upload.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    UploadPageRoutingModule
-  ],
-  declarations: [UploadPage]
+  imports: [CommonModule, FormsModule, IonicModule, UploadPageRoutingModule],
+  declarations: [UploadPage],
 })
 export class UploadPageModule {}
