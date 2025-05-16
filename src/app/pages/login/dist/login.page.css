@@ -1,0 +1,245 @@
+/* ENTRAR */
+.container {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  background: #ffffff;
+}
+.container .rectangle-1 {
+  position: absolute;
+  width: 400px;
+  height: 650px;
+  left: -10px;
+  top: 203px;
+  background: #2d49ff;
+  box-shadow: 0px 4px 42px rgba(70, 94, 252, 0.52);
+  border-radius: 4px;
+  transform: matrix(1, 0, 0, -1, 0, 0);
+}
+.container .traced-image {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: calc(50% - 70px / 2 + 154px);
+  top: 59px;
+}
+.container .vector {
+  position: absolute;
+  left: 21.17%;
+  right: 21.17%;
+  top: 21.25%;
+  bottom: 21.15%;
+  background: #e4e312;
+}
+.container .status-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 21px 0px 0px;
+  position: absolute;
+  width: 393px;
+  height: 42px;
+  left: -2px;
+  top: -11px;
+}
+.container .status-bar .frame {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 134px;
+  width: 393px;
+  height: 22px;
+}
+.container .status-bar .frame .time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 6px 0px 16px;
+  gap: 10px;
+  width: 134.5px;
+  height: 22px;
+  font-family: "SF Pro";
+  font-weight: 590;
+  font-size: 17px;
+  text-align: center;
+  color: #000;
+}
+.container .status-bar .dynamic-island {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 124px;
+  height: 10px;
+}
+.container .status-bar .levels {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px 0px 6px;
+  gap: 7px;
+  width: 134.5px;
+  height: 13px;
+}
+.container .status-bar .levels .cellular,
+.container .status-bar .levels .wifi {
+  background: #000;
+}
+.container .status-bar .levels .cellular {
+  width: 19.2px;
+  height: 12.23px;
+}
+.container .status-bar .levels .wifi {
+  width: 17.14px;
+  height: 12.33px;
+}
+.container .status-bar .levels .battery {
+  width: 27.33px;
+  height: 13px;
+  position: relative;
+}
+.container .status-bar .levels .battery .border {
+  box-sizing: border-box;
+  position: absolute;
+  width: 25px;
+  left: calc(50% - 25px / 2 + 19.01px);
+  border: 1px solid #000;
+  border-radius: 4.3px;
+  opacity: 0.35;
+}
+.container .status-bar .levels .battery .cap {
+  position: absolute;
+  width: 1.33px;
+  left: calc(50% - 1.33px / 2 + 33.17px);
+  top: 36.78%;
+  background: #000;
+  opacity: 0.4;
+}
+.container .status-bar .levels .battery .capacity {
+  position: absolute;
+  width: 21px;
+  left: calc(50% - 21px / 2 + 19.01px);
+  background: #000;
+  border-radius: 2.5px;
+}
+.container .home-indicator-wrapper {
+  position: absolute;
+  width: 400px;
+  height: 34px;
+  left: calc(50% - 400px / 2);
+  top: 808px;
+}
+.container .home-indicator-wrapper .home-indicator {
+  position: absolute;
+  width: 144px;
+  height: 5px;
+  left: calc(50% - 144px / 2 + 144px);
+  bottom: 8px;
+  background: #000;
+  border-radius: 100px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+.container .entrar-title {
+  position: absolute;
+  width: 223px;
+  height: 64px;
+  left: calc(50% - 223px / 2 - 49.5px);
+  top: 71px;
+  font-family: "Baloo 2";
+  font-weight: 600;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  color: #fcfc30;
+}
+.container .rectangle-3,
+.container .rectangle-4 {
+  position: absolute;
+  width: 335px;
+  height: 35px;
+  left: 29px;
+  background: rgba(217, 217, 217, 0.7);
+  box-shadow: 0px 4px 13.5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+}
+.container .rectangle-3 {
+  top: 318px;
+}
+.container .rectangle-4 {
+  top: 405px;
+}
+.container .input-label {
+  font-family: "Baloo 2";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.container .input-label.email {
+  position: absolute;
+  left: 41px;
+  top: 326px;
+}
+.container .input-label.senha {
+  position: absolute;
+  left: 41px;
+  top: 413px;
+}
+.container .field-label {
+  font-family: "Baloo 2";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #465efc;
+}
+.container .field-label.email {
+  position: absolute;
+  top: 290px;
+  left: 33px;
+}
+.container .field-label.senha {
+  position: absolute;
+  top: 377px;
+  left: 33px;
+}
+.container .esqueceu-senha {
+  position: absolute;
+  width: 234px;
+  height: 21px;
+  left: calc(50% - 234px / 2 - 45px);
+  top: 454px;
+  font-family: "Baloo 2";
+  font-size: 12.5px;
+  line-height: 20px;
+  color: rgba(70, 94, 252, 0.9);
+  display: flex;
+  align-items: center;
+}
+.container .criar-conta {
+  position: absolute;
+  width: 194px;
+  height: 21px;
+  left: calc(50% - 194px / 2);
+  top: 787px;
+  font-family: "Baloo 2";
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  color: #465efc;
+  display: flex;
+  align-items: center;
+}
+.container .back-button {
+  position: absolute;
+  width: 14px;
+  height: 25px;
+  left: 182px;
+  top: 773px;
+  background: url("login/Arr.png");
+  transform: rotate(-90deg);
+}
