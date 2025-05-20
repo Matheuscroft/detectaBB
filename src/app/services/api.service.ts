@@ -37,4 +37,11 @@ export class ApiService {
       .get(`${this.baseUrl}/auth/me`)
       .pipe(catchError(this.handleError));
   }
+
+  register(data: { nome: string; email: string; senha: string }): Observable<any> {
+  return this.http
+    .post(`${this.baseUrl}/auth/register`, data)
+    .pipe(catchError(this.handleError));
+}
+
 }

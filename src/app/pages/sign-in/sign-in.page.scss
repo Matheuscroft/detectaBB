@@ -1,109 +1,128 @@
 .cadastro-content {
-    --background: #ffffff;
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
+  --background: #ffffff;
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
 }
 
 .titulo-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  margin-top: 40px;
 }
 
-
-
 .titulo {
-    font-family: 'Baloo 2', cursive;
-    font-size: 45px;
-    color: #FCFC30;
-    margin: 0;
+  font-family: "Baloo 2", cursive;
+  font-size: 45px;
+  color: #fcfc30;
+  margin: 0;
 }
 
 .titulo-imagem {
-    width: auto; 
-    height: auto;
+  width: auto;
+  height: auto;
 }
 
 .formulario {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 16px;
+  margin-top: 30%;
 }
 
 ion-label {
-    font-size: 15px;
-    font-family: 'Baloo 2', sans-serif;
+  font-size: 15px;
+  font-family: "Baloo 2", sans-serif;
 }
 
 .link-login {
-    text-align: center;
-    font-size: 14px;
-    color: #465EFC;
+  text-align: center;
+  font-size: 14px;
+  color: #465efc;
 
-    font-family: 'Baloo 2', sans-serif;
+  font-family: "Baloo 2", sans-serif;
 }
 
 .link-login a {
-    color: #465EFC;
-    text-decoration: none;
+  color: #465efc;
+  text-decoration: none;
 }
 
 .input-label-azul {
-    color: #465EFC;
-    font-size: 19px;
-    font-family: 'Baloo 2', sans-serif;
-    background: transparent !important;
+  color: #465efc;
+  font-size: 19px;
+  font-family: "Baloo 2", sans-serif;
+  background: transparent !important;
 }
 
 ion-item {
-    --background: transparent;
-    --highlight-color-focused: transparent;
-    --border-color: transparent;
-    background: transparent !important;
-    box-shadow: none;
+  --background: transparent;
+  --highlight-color-focused: transparent;
+  --border-color: transparent;
+  background: transparent !important;
+  box-shadow: none;
 }
 
-
 ion-label {
-    font-family: 'Baloo 2';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    background: transparent !important;
-    border: none;
+  font-family: "Baloo 2";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  background: transparent !important;
+  border: none;
 
-    color: #465EFC;
+  color: #465efc;
 }
 
 .svg-top-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 250px;
-    z-index: -1;
-    pointer-events: none;
-    image-rendering: optimizeQuality;
-    shape-rendering: geometricPrecision;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  z-index: -1;
+  pointer-events: none;
+  image-rendering: optimizeQuality;
+  shape-rendering: geometricPrecision;
 }
 
 ion-input {
+  width: 100%;
+  height: auto;
+  font-family: "Baloo 2", sans-serif;
 
-    width: 100%;
-    height: auto;
-    font-family: 'Baloo 2', sans-serif;
+  background: rgba(217, 217, 217, 0.7);
+  box-shadow: 0px 4px 13.5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: left;
 
-    background: rgba(217, 217, 217, 0.7);
-    box-shadow: 0px 4px 13.5px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-    padding: 12px;
-    text-align: left;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+}
+
+.conteudo-wrapper {
+  flex: 1;
+  overflow-y: auto;
+}
 
 
+.botao-fixo {
+  position: fixed;
+  bottom: 20px;
+  left: 16px;
+  right: 16px;
+  z-index: 10;
+}
+.und {
+  text-decoration: underline !important;
 }

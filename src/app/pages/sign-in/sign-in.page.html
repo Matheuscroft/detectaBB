@@ -31,53 +31,33 @@
     <img src="assets/icon/BB.png" class="titulo-imagem" />
   </div>
 
-  <form class="formulario">
+  <div class="conteudo-wrapper">
+    <form class="formulario" (ngSubmit)="register()">
+      <ion-item>
+        <ion-label position="stacked" class="input-label-azul">Nome</ion-label>
+        <ion-input [(ngModel)]="nome" name="nome" class="text-input" placeholder="Digite seu nome" type="text"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-label position="stacked" class="input-label-azul">E-mail</ion-label>
+        <ion-input [(ngModel)]="email" name="email" placeholder="Digite seu e-mail" type="email"></ion-input>
+      </ion-item>
 
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <ion-item>
-      <ion-label position="stacked" class="input-label-azul">Nome</ion-label>
-      <ion-input class="text-input" placeholder="Digite seu nome" type="text"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label position="stacked" class="input-label-azul">Senha</ion-label>
+        <ion-input [(ngModel)]="senha" name="senha" placeholder="Digite sua senha" type="password"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="stacked" class="input-label-azul">E-mail</ion-label>
-      <ion-input placeholder="Digite seu e-mail" type="email"></ion-input>
-    </ion-item>
+      <p class="link-login">Já tem uma conta?
+        <a class="und" (click)="irParaLogin()">Acessar minha conta</a>
+      </p>
 
-    <ion-item>
-      <ion-label position="stacked" class="input-label-azul">Senha</ion-label>
-      <ion-input placeholder="Digite sua senha" type="password"></ion-input>
-    </ion-item>
+      <p *ngIf="mensagemErro" style="color: red;">{{ mensagemErro }}</p>
+    </form>
+  </div>
 
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <p class="link-login">
-      Já tem uma conta?
-      <a href="" >Acessar minha conta</a>
-    </p>
+  <div class="botao-fixo">
+    <ion-button expand="block" type="submit" color="primary" (click)="register()">Criar Conta</ion-button>
+  </div>
 
-
-  </form>
 </ion-content>
