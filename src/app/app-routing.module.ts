@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./pages/login/login.module').then((m) => m.LoginPageModule),
+    loadChildren: () => import('./pages/landing-page/landing-page.module').then( m => m.LandingPagePageModule)
   },
   {
     path: 'home-page',
@@ -13,16 +13,19 @@ const routes: Routes = [
       import('./pages/home-page/home-page.module').then(
         (m) => m.HomePagePageModule
       ),
+    canActivate: [authGuard]
   },
   {
     path: 'upload',
     loadChildren: () =>
       import('./pages/upload/upload.module').then((m) => m.UploadPageModule),
+    canActivate: [authGuard]
   },
   {
     path: 'result',
     loadChildren: () =>
       import('./pages/result/result.module').then((m) => m.ResultPageModule),
+    canActivate: [authGuard]
   },
   {
     path: 'login',

@@ -3,10 +3,9 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-
   private baseUrl = 'http://localhost:5000';
 
   constructor(private http: HttpClient) {}
@@ -16,9 +15,9 @@ export class ApiService {
     formData.append('image', file);
     formData.append('password', password);
 
-    return this.http.post(`${this.baseUrl}/boleto/upload`, formData).pipe(
-      catchError(this.handleError)
-    );
+    return this.http
+      .post(`${this.baseUrl}/boleto/upload`, formData)
+      .pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
@@ -27,10 +26,15 @@ export class ApiService {
   }
 
   login(email: string, senha: string): Observable<any> {
-  const body = { email, senha };
-  return this.http.post(`${this.baseUrl}/auth/login`, body).pipe(
-    catchError(this.handleError)
-  );
-}
+    const body = { email, senha };
+    return this.http
+      .post(`${this.baseUrl}/auth/login`, body)
+      .pipe(catchError(this.handleError));
+  }
 
+  getUserData(): Observable<any> {
+    return this.http
+      .get(`${this.baseUrl}/auth/me`)
+      .pipe(catchError(this.handleError));
+  }
 }

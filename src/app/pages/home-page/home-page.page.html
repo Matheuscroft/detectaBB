@@ -10,11 +10,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="home-page" fullscreen>
+<ion-content *ngIf="carregando">
+  <ion-spinner name="crescent" style="margin-top: 50%; display: block;" color="primary"></ion-spinner>
+</ion-content>
+
+<ion-content class="home-page" fullscreen *ngIf="!carregando">
   <div class="top-wave"></div>
 
   <div class="greeting">
-    <h2>Olá, Nina!</h2>
+    <h2>Olá, {{ nome }}!</h2>
     <p>Que bom você por aqui!</p>
   </div>
 

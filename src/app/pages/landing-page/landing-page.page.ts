@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -8,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPagePage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
+
+  irParaLogin() {
+    this.router.navigate(['/login']);
+  }
+
+
+  irParaSignIn() {
+    this.router.navigate(['/sign-in']);
+  }
+
 
 }
