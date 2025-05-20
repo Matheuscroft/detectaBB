@@ -23,7 +23,6 @@ export class LoginPage implements OnInit {
     try {
       const response = await this.api.login(this.email, this.senha).toPromise();
 
-      // Armazena o token localmente (ajustável depois com JWT interceptor)
       localStorage.setItem('token', response.token);
       localStorage.setItem('user', JSON.stringify(response.user));
 
@@ -37,6 +36,10 @@ export class LoginPage implements OnInit {
       });
       await alert.present();
     }
+  }
+
+  irParaRecuperarSenha() {
+    this.router.navigate(['/forgot-password']);
   }
 
 }

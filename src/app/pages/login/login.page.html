@@ -57,7 +57,7 @@
       <ion-label position="stacked" class="input-label-azul">Senha</ion-label>
       <ion-input placeholder="Digite sua senha" type="password" [(ngModel)]="senha" name="senha"></ion-input>
       <p class="input-label-azul">Esqueceu sua senha?
-        <a href="forgot-password" class="und">Recuperar conta</a>
+        <a class="und" (click)="irParaRecuperarSenha()">Recuperar conta</a>
       </p>
     </ion-item>
 
