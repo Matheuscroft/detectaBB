@@ -16,4 +16,8 @@ export class ResultPage {
     this.resultado = nav?.extras.state?.['resultado'];
   }
 
+   irParaHome() {
+    this.router.navigate(['/home-page']);
+  }
+
 }
