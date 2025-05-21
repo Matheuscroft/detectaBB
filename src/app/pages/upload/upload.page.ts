@@ -4,6 +4,10 @@ import { ApiService } from 'src/app/services/api.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 //import * as pdfjsLib from 'pdfjs-dist';
 //pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+import * as pdfjsLib from 'pdfjs-dist/build/pdf';
+import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.entry';
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 @Component({
   selector: 'app-upload',
@@ -38,9 +42,7 @@ export class UploadPage {
       
       const file = new File([blob], 'foto-camera.png', { type: blob.type });
   
-      const senha = prompt('Digite a senha do boleto (ou deixe em branco):') || '';
-  
-      this.apiService.uploadBoleto(file, senha).subscribe({
+      this.apiService.uploadBoleto(file, '').subscribe({
         next: (res) => {
           console.log('Resposta do backend:', res);
           this.router.navigate(['/result'], { state: { resultado: res } });
@@ -60,9 +62,34 @@ export class UploadPage {
     this.fileInput.nativeElement.click();
   }
 
-  arquivoSelecionado(event: any) {
+  async arquivoSelecionado(event: any) {
     const file = event.target.files[0];
-    if (file) {
+    if (!file) return;
+
+    this.selectedFile = file;
+
+    if (file.type === 'application/pdf') {
+
+    const arrayBuffer = await file.arrayBuffer();
+
+    try {
+      await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+      this.enviarArquivo(file, '');
+    } catch (err: any) {
+      if (err?.name === 'PasswordException') {
+        const senha = prompt('Este PDF está protegido. Digite a senha do boleto:') || '';
+        this.enviarArquivo(file, senha);
+      } else {
+        alert('Erro ao processar o PDF: ' + err.message);
+      }
+    }
+
+  } else {
+    this.enviarArquivo(file, '');
+  }
+
+    /*if (file) {
       this.selectedFile = file;
 
       const senha = prompt('Digite a senha do boleto (ou deixe em branco):') || '';
@@ -76,8 +103,22 @@ export class UploadPage {
           alert('Erro ao processar o boleto: ' + err.error?.error || 'Erro desconhecido');
         },
       });
-    }
+    }*/
   }
+
+  enviarArquivo(file: File, senha: string) {
+  this.apiService.uploadBoleto(file, senha).subscribe({
+    next: (res) => {
+      console.log('Resposta do backend:', res);
+      this.router.navigate(['/result'], { state: { resultado: res } });
+    },
+    error: (err) => {
+      alert('Erro ao processar o boleto: ' + err.error?.error || 'Erro desconhecido');
+    },
+  });
+}
+
+
 
   dataURLToBlob(dataUrl: string): Blob {
     const arr = dataUrl.split(',');

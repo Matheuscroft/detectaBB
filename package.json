@@ -32,7 +32,7 @@
     "@ionic/pwa-elements": "^3.3.0",
     "@types/pdfjs-dist": "^2.10.378",
     "ionicons": "^7.0.0",
-    "pdfjs-dist": "^5.2.133",
+    "pdfjs-dist": "^2.14.305",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
