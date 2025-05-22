@@ -6,6 +6,7 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./pages/landing-page/landing-page.module').then( m => m.LandingPagePageModule)
+   
   },
   {
     path: 'home-page',

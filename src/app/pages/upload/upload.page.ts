@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
@@ -21,9 +22,20 @@ export class UploadPage {
 
   
 
-  constructor(private router: Router, private apiService: ApiService) {}
+  constructor(private router: Router, private apiService: ApiService, private loadingController: LoadingController,) {}
+
+ async presentLoading(message: string = 'Processando boleto...'): Promise<HTMLIonLoadingElement> {
+    const loading = await this.loadingController.create({
+      message,
+      spinner: 'circles',    // ou 'crescent', 'dots', etc.
+      backdropDismiss: false, // Impede o fechamento ao clicar fora do overlay
+    });
+    await loading.present();
+    return loading;
+  }
 
   async usarCamera() {
+    let loading: HTMLIonLoadingElement | undefined;
     try {
       const image = await Camera.getPhoto({
         quality: 90,
@@ -41,18 +53,23 @@ export class UploadPage {
       const blob = this.dataURLToBlob(image.dataUrl);
       
       const file = new File([blob], 'foto-camera.png', { type: blob.type });
+
+      loading = await this.presentLoading('Enviando imagem...');  
   
       this.apiService.uploadBoleto(file, '').subscribe({
         next: (res) => {
+          loading?.dismiss();
           console.log('Resposta do backend:', res);
           this.router.navigate(['/result'], { state: { resultado: res } });
         },
         error: (err) => {
+          loading?.dismiss();
           alert('Erro ao processar o boleto: ' + err.error?.error || 'Erro desconhecido');
         },
       });
   
     } catch (error) {
+      loading?.dismiss();
       console.error('Erro ao capturar imagem:', error);
     }
   }
@@ -69,21 +86,19 @@ export class UploadPage {
     this.selectedFile = file;
 
     if (file.type === 'application/pdf') {
+      const arrayBuffer = await file.arrayBuffer();
 
-    const arrayBuffer = await file.arrayBuffer();
-
-    try {
-      await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-
-      this.enviarArquivo(file, '');
-    } catch (err: any) {
-      if (err?.name === 'PasswordException') {
-        const senha = prompt('Este PDF está protegido. Digite a senha do boleto:') || '';
-        this.enviarArquivo(file, senha);
-      } else {
-        alert('Erro ao processar o PDF: ' + err.message);
+      try {
+        await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        this.enviarArquivo(file, '');
+      } catch (err: any) {
+        if (err?.name === 'PasswordException') {
+          const senha = prompt('Este PDF está protegido. Digite a senha do boleto:') || '';
+          this.enviarArquivo(file, senha);
+        } else {
+          alert('Erro ao processar o PDF: ' + err.message);
+        }
       }
-    }
 
   } else {
     this.enviarArquivo(file, '');
@@ -106,17 +121,20 @@ export class UploadPage {
     }*/
   }
 
-  enviarArquivo(file: File, senha: string) {
-  this.apiService.uploadBoleto(file, senha).subscribe({
-    next: (res) => {
-      console.log('Resposta do backend:', res);
-      this.router.navigate(['/result'], { state: { resultado: res } });
-    },
-    error: (err) => {
-      alert('Erro ao processar o boleto: ' + err.error?.error || 'Erro desconhecido');
-    },
-  });
-}
+  async enviarArquivo(file: File, senha: string) {
+    const loading = await this.presentLoading();
+    this.apiService.uploadBoleto(file, senha).subscribe({
+      next: (res) => {
+        loading.dismiss();
+        console.log('Resposta do backend:', res);
+        this.router.navigate(['/result'], { state: { resultado: res } });
+      },
+      error: (err) => {
+        loading.dismiss();
+        alert('Erro ao processar o boleto: ' + err.error?.error || 'Erro desconhecido');
+      },
+    });
+  }
 
 
 
