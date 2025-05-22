@@ -1,6 +1,39 @@
 .home-page {
   --background: #FCFC30;
 
+  .profile-button-container {
+    position: absolute;
+    top: var(--ion-safe-area-top, 10px);
+    top: 10px;
+    right: 5px;
+    z-index: 100;
+  }
+
+  .profile-button-standalone {
+    padding: 0;
+    margin: 0;
+    width: 75px;
+    height: 75px;
+    --border-radius: 50%;
+    --background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ion-avatar.profile-avatar-standalone {
+      width: 45px;
+      height: 45px;
+
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+
   .top-wave {
     background: #FCFC30;
     height: 160px;
@@ -10,71 +43,27 @@
     position: relative;
   }
 
-  ion-header {
-    ion-toolbar {
-      background: transparent !important;
-      min-height: 48px;
-      padding-top: 4px;
-
-      ion-buttons {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-
-        ion-icon {
-          font-size: 24px;
-          color: #465EFF;
-        }
-
-        .profile-icon {
-          width: 32px;
-          height: 32px;
-        }
-        ion-button.profile-button {
-        padding: 0;
-        margin: 8px 12px 0 0;
-        width: 34px;
-        height: 34px;
-        --border-radius: 50%;
-        --background: transparent;
-      }
-
-      ion-avatar.profile-avatar {
-      width: 32px;
-      height: 32px;
-      img {
-      border-radius: 50%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-}
-
-      }
-    }
-  }
-
   .greeting {
-    position: relative;
-    top: -40px;
-    padding: 0 20px;
+
+    margin-top: 70px;
+    padding: 0 30px;
 
     h2 {
       font-weight: bold;
       color: #465EFF;
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 6px;
     }
 
     p {
       color: #465EFF;
-      font-size: 16px;
+      font-size: 18px;
       margin: 0;
     }
   }
 
   .validate-section {
-    margin-top: 100px;
+    margin-top: 230px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -84,7 +73,7 @@
     .validate-text {
       font-weight: 500;
       color: #465EFF;
-      font-size: 16px;
+      font-size: 18px;
       text-align: center;
     }
 
@@ -94,8 +83,8 @@
       border-radius: 12px;
       font-weight: bold;
       width: 200px;
-      height: 45px;
-      font-size: 14px;
+      height: 55px;
+      font-size: 18px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
   }
@@ -108,4 +97,3 @@
     height: 50px;
   }
 }
-
