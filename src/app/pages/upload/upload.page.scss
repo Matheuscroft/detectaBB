@@ -29,6 +29,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+    width: 100%;
+  max-width: 300px;
+  padding: 0 16px;
 
     ion-button.camera-button {
       --background: #f2f13d;

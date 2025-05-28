@@ -44,4 +44,12 @@ export class ApiService {
     .pipe(catchError(this.handleError));
 }
 
+recoverPassword(email: string, novaSenha: string): Observable<any> {
+  const body = { email, nova_senha: novaSenha };
+  return this.http
+    .put(`${this.baseUrl}/auth/recover-password`, body)
+    .pipe(catchError(this.handleError));
+}
+
+
 }
