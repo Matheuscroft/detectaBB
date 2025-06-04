@@ -45,7 +45,9 @@
         .mensagem {
           font-size: 16px;
           margin-top: 10px;
-          color: white;
+          color: black;
+          text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+            2px 2px 0 white;
         }
       }
     }
