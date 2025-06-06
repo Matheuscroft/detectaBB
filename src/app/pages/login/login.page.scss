@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-top: 110px;
 }
 
 ion-label {
@@ -51,9 +52,7 @@ ion-label {
 
 .input-label-azul {
   color: #465efc;
-  font-size: 18px;
-  font-family: "Baloo 2", sans-serif;
-  background: transparent !important;
+  font-size: 23px;
 }
 
 ion-item {
@@ -65,17 +64,7 @@ ion-item {
 }
 
 ion-label {
-  font-family: "Baloo 2";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
   line-height: 24px;
-  display: flex;
-  align-items: center;
-  background: transparent !important;
-  border: none;
-
-  color: #465efc;
 }
 
 .svg-top-background {
@@ -93,25 +82,62 @@ ion-label {
 ion-input {
   width: 100%;
   height: auto;
-  font-family: "Baloo 2", sans-serif;
   margin-top: 10px;
   background: rgba(217, 217, 217, 0.7);
   box-shadow: 0px 4px 13.5px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  padding: 12px;
-  text-align: left;
   color: rgba(0, 0, 0, 0.5);
+  --padding-start: 10px;
 }
 .und {
   text-decoration: underline !important;
+  color: #465efc;
+}
+
+
+.link-forgot-password, .link-sign-in{
+  text-align: center;
+  font-size: 16px;
+  color: #465efc;
+}
+
+.botao-fixo {
+  border-radius: 20px;
 }
 
 .login-button {
-  --background: #465eff;
-  --color: white;
-  border-radius: 12px;
   font-weight: bold;
   height: 45px;
-  font-size: 14px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+ion-button {
+      --background: #465EFF;
+      --background-hover: #1565c0;
+      --border-radius: 20px;
+      --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      --color: white;
+      font-size: 16px;
+      text-transform: none;
+    }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.formulario,
+.link-forgot-password {
+  margin-bottom: 20px;
+}
+
+.footer {
+  margin-top: auto;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.login-button {
+  margin: 0 16px;
 }

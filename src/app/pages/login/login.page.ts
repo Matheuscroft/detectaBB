@@ -42,4 +42,8 @@ export class LoginPage implements OnInit {
     this.router.navigate(['/forgot-password']);
   }
 
+  irParaCadastro() {
+    this.router.navigate(['/sign-in']);
+  }
+
 }

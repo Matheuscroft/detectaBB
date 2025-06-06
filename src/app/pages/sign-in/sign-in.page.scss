@@ -43,10 +43,8 @@ ion-label {
 
 .link-login {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #465efc;
-
-  font-family: "Baloo 2", sans-serif;
 }
 
 .link-login a {
@@ -56,9 +54,7 @@ ion-label {
 
 .input-label-azul {
   color: #465efc;
-  font-size: 19px;
-  font-family: "Baloo 2", sans-serif;
-  background: transparent !important;
+  font-size: 23px;
 }
 
 ion-item {
@@ -70,17 +66,7 @@ ion-item {
 }
 
 ion-label {
-  font-family: "Baloo 2";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 15px;
   line-height: 24px;
-  display: flex;
-  align-items: center;
-  background: transparent !important;
-  border: none;
-
-  color: #465efc;
 }
 
 .svg-top-background {
@@ -108,6 +94,7 @@ ion-input {
 
   color: rgba(0, 0, 0, 0.5);
   margin-top: 10px;
+  --padding-start: 10px;
 }
 
 .conteudo-wrapper {
@@ -126,3 +113,13 @@ ion-input {
 .und {
   text-decoration: underline !important;
 }
+
+ion-button {
+      --background: #465EFF;
+      --background-hover: #1565c0;
+      --border-radius: 20px;
+      --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+      --color: white;
+      font-size: 16px;
+      text-transform: none;
+    }
