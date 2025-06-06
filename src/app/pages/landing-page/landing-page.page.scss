@@ -31,10 +31,10 @@
     .destaque {
       color: #2d4fff;
       font-weight: 700;
-      background-image: linear-gradient(yellow, yellow);
-      background-size: 100% 5px;
+      background-image: linear-gradient(#fcfc30, #fcfc30);
+      background-size: 100% 8px;
       background-repeat: no-repeat;
-      background-position: 0 70%;
+      background-position: 0 80%;
     }
   }
 
@@ -48,11 +48,12 @@
     ion-button {
       width: 40%;
       max-width: 300px;
-      --background: #1e88e5;
+      --background: #465EFF;
       --background-hover: #1565c0;
       --border-radius: 20px;
       --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-      font-size: 18px;
+      --color: white;
+      font-size: 16px;
       text-transform: none;
     }
   }
