@@ -20,15 +20,13 @@ export class UploadPage {
   @ViewChild('fileInput', { static: false }) fileInput!: ElementRef;
   selectedFile!: File;
 
-  
-
   constructor(private router: Router, private apiService: ApiService, private loadingController: LoadingController,) {}
 
  async presentLoading(message: string = 'Processando boleto...'): Promise<HTMLIonLoadingElement> {
     const loading = await this.loadingController.create({
       message,
-      spinner: 'circles',    // ou 'crescent', 'dots', etc.
-      backdropDismiss: false, // Impede o fechamento ao clicar fora do overlay
+      spinner: 'circles', 
+      backdropDismiss: false, 
     });
     await loading.present();
     return loading;
@@ -74,7 +72,6 @@ export class UploadPage {
     }
   }
   
-
   abrirGaleria() {
     this.fileInput.nativeElement.click();
   }
@@ -104,21 +101,6 @@ export class UploadPage {
     this.enviarArquivo(file, '');
   }
 
-    /*if (file) {
-      this.selectedFile = file;
-
-      const senha = prompt('Digite a senha do boleto (ou deixe em branco):') || '';
-
-      this.apiService.uploadBoleto(this.selectedFile, senha).subscribe({
-        next: (res) => {
-          console.log('Resposta do backend:', res);
-          this.router.navigate(['/result'], { state: { resultado: res } });
-        },
-        error: (err) => {
-          alert('Erro ao processar o boleto: ' + err.error?.error || 'Erro desconhecido');
-        },
-      });
-    }*/
   }
 
   async enviarArquivo(file: File, senha: string) {

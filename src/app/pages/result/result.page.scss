@@ -28,6 +28,7 @@
       color: #000;
       min-height: 250px;
       align-items: center;
+      --background: #fff;
 
       ion-card-header {
         background-color: transparent;
@@ -43,11 +44,10 @@
         padding-top: 0;
 
         .mensagem {
-          font-size: 16px;
+          font-size: 20px;
           margin-top: 10px;
           color: black;
-          text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-            2px 2px 0 white;
+          
         }
       }
     }

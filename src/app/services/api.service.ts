@@ -14,7 +14,7 @@ export class ApiService {
   uploadBoleto(file: File, password: string): Observable<any> {
     const formData = new FormData();
     formData.append('image', file);
-    formData.append('password', password);
+    formData.append('password', password); 
 
     return this.http
       .post(`${this.baseUrl}/boleto/upload`, formData)
