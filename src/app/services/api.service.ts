@@ -7,7 +7,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 })
 export class ApiService {
   //private baseUrl = 'http://localhost:5000';
-  private baseUrl = 'https://detecta-backend.onrender.com';
+  private baseUrl = 'https://detectabb-backend.onrender.com';
 
   constructor(private http: HttpClient) {}
 
